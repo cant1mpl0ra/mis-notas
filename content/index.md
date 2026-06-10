@@ -1,6 +1,12 @@
 ---
 title: Welcome to Quartz
 ---
-
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+---  
+title: Inicio  
+---  
+  
+# Mi web de notas  
+  
+Bienvenido a mi web creada con Obsidian y Quartz.  
+  
+Puedes visitar mi primera nota: [[Primera nota]]
