@@ -18,6 +18,7 @@ Microsoft first introduced the Windows operating system on November 20, 1985.
 We can use the [Get-WmiObject](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1) [cmdlet](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7) to find information about the operating system.
 
 ### Remote Access Protocol
+
 Port 3389. Arquitectura client-servidor.
 Per a que funcioni s'ha d'activar prèviament a Windows.
 
@@ -39,6 +40,7 @@ Per a que funcioni s'ha d'activar prèviament a Windows.
 *Comandes explicades: dir, tree*
 
 ## FILE SYSTEM
+
 There are 5 types of Windows file systems: FAT12, FAT16, FAT32, NTFS, and exFAT. FAT12 and FAT16 are no longer used on modern Windows operating systems. We will touch upon the FAT32 and exFAT file systems for this training, but our main focus will be the NTFS file system.
 
 The "32" in the name refers to the fact that FAT32 uses 32 bits of data for identifying data clusters on a storage device.
@@ -58,6 +60,7 @@ The "32" in the name refers to the fact that FAT32 uses 32 bits of data for iden
 | Has journaling built-in, meaning that file modifications (addition, modification, deletion) are logged.             |                                                                                                    |
 
 ### Permissions NTFS
+
 The NTFS file system has many basic and advanced permissions.
 
 | PERMISSION TYPE      | DESCRIPTION                                                                                                                |
@@ -70,6 +73,7 @@ The NTFS file system has many basic and advanced permissions.
 | Read                 | Allows for viewing and listing of folders and subfolders and viewing a file's contents.                                    |
 | Traverse Folder      | This allows or denies the ability to move through folders to reach other files or folders.                                 |
 ### Integrity Controll Access Control Lists (icacls)
+
 NTFS permissions on files and folders in Windows can be managed using the File Explorer GUI under the security tab. Apart from the GUI, we can also achieve a fine level of granularity over NTFS file permissions in Windows from the command line using the icacls utility.
 
 We can list out the NTFS permissions on a specific directory by running either `icacls` from within the working directory or `icacls C:\Windows` against a directory not currently in.
@@ -119,7 +123,7 @@ The `Server Message Block protocol` (`SMB`) is used in Windows to connect shar
 | smbclient '\\SERVER_IP\Company Data' -U htb-student | Connecting to the Company Data share     |
 
 ## WORKING WITH SERVICES AND PROCESSES
-### WINDOWS SERVICES AND PROCESSES
+### Windows Services and Processes
 #### Services
 Services are a major component of the Windows operating system. They allow for the creation and management of long-running processes. Windows services can be started automatically at system boot without user intervention. These services can continue to run in the background even after the user logs out of their account on the system.
 
@@ -163,7 +167,7 @@ We can run procdump.exe directly from this share without downloading it directly
 
 The suite include tools that can be used to monitor file system, registry, and network activity related to any process running on the system.
 
-### SERVICE PERMISSION
+### Service Permission
 
 Service permissions misconfigurations put in place by 3rd party software and easy to make mistakes by admins during install process.
 
@@ -177,7 +181,6 @@ We can use services.msc to view and manage just about every detail regarding all
 "Path to the executable" is the full path to the program and command to execute when the service starts.
 
 #### Examining services using sc
-
 sc gives us the ability to quickly search and analyze commonly targeted services and newly created services.
 
 ![[Pasted image 20260620151622.png]]
@@ -189,14 +192,12 @@ Every named object in Windows is a [securable object](https://docs.microsoft.co
 We can query a service over the network:
 
 ![[Pasted image 20260620154320.png]]
-
-
 #### Examine service permissions using Powershell
 Using the `Get-Acl` PowerShell cmdlet, we can examine service permissions by targeting the path of a specific service in the registry.
 
 ![[Pasted image 20260620154808.png]]
 
-### WINDOWS SESSIONS (NON-INTERACTIVE)
+### Windows Sessions (non-interactive)
 
 Non-interactive accounts does not require login credentials. There are three types of non-interactive accounts:
 
@@ -206,12 +207,11 @@ Non-interactive accounts does not require login credentials. There are three typ
 | Local Service Account | Known as the `NT AUTHORITY\LocalService` account, this is a less privileged version of the SYSTEM account and has similar privileges to a local user account. It is granted limited functionality and can start some services.                                         |
 | Local Service Account | This is known as the `NT AUTHORITY\NetworkService` account and is similar to a standard domain user account. It has similar privileges to the Local Service Account on the local machine. It can establish authenticated sessions for certain network services.        |
 
-### INTERACTING WITH THE WINDOWS OS
+### Interacting with the Windows OS
 #### Remote Desktop Protocol
 [RDP](https://support.microsoft.com/en-us/help/186607/understanding-the-remote-desktop-protocol-rdp) is a proprietary Microsoft protocol which allows a user to connect to a remote system over a network connection and obtain a graphical user interface.
 
 RDP uses port 3389
-
 #### The Command Prompt (CMD)
 
 `C:\Windows\system32\cmd.exe`
@@ -219,8 +219,6 @@ RDP uses port 3389
 Generalment `help <command>`
 
 Però algunes comandes `<command> /?`
-
-
 #### Powershell
 
 **CMDLET** 
@@ -232,7 +230,6 @@ ALIASES
 - Podem crear les nostres abreviatures personalitzades
 
 ![[Pasted image 20260620155800.png]]
-
 #### Execution Policy
 Sometimes we wil find that we are unable to run scripts on a a system. This is due to a security feature called the 'execution policy', which attempts to prevent the execution of malicious scripts.
 
@@ -249,8 +246,7 @@ Sometimes we wil find that we are unable to run scripts on a a system. This is d
 `Get-ExecutionPolicy -List`
 ![[Pasted image 20260620160027.png]]
 
-
-### WINDOWS MANAGEMENT INSTRUMENTATION
+### Windows Management Instrumentation
 
 WMI is a subsystem of PowerShell that provides system administrators with powerful tools for system monitoring.
 
@@ -278,8 +274,7 @@ WMI can be used with powershell by using `Get-WmiObject` module.
 
 Laters sections will show some ways that WMI can be leveraged offensively for both enumeration and lateral movement.
 
-
-### MICROSOFT MANAGEMENT CONSOLE (MMC)
+### Microsoft Management Console (MMC)
 
 The MMC can be used to group snap-ins, or administrative tools, to manage hardware, software, and network components within a Windows host.
 
@@ -289,22 +284,21 @@ We can save the set of snap-ins as a .msc file, so they will all be loaded the n
 
 ![[Pasted image 20260620160642.png]]
 
-### WINDOWS SUBSYSTEM FOR LINUX (WSL)
+### Windows Subsystem for Linux (WSL)
 
 WSL is a feature that allows Linux binaries to be run natively on Windows.
 
-### DESKTOP EXPERIENCE VS SERVER CORE
+### Desktop Experience VS Server Core
 
 [Windows Server Core](https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core) was first released with Windows Server 2008 as a minimalistic Server environment only containing key Server functionality. As a result, Server Core has lower management requirements, a smaller attack surface, and uses less disk space and memory than its Desktop Experience (GUI) counterpart.
 
-### WINDOWS SECURITY
+### Windows Security
 
 Due to the many built-in applications, features, and layers of settings, Windows systems can be easily misconfigured, thus opening them up to attack even if they are fully patched.
 
 Microsoft has continued to add new features that can be used by systems administrators to harden systems and actively block and detect attempts at intrusion and misuse.
 
 Windows follows certain security principles to control access and authentication within the system. These principles apply to various entities, such as users, networked computers, threads, and processes, which can be authorized for specific actions.
-
 #### Security Identifier (SID)
 
 

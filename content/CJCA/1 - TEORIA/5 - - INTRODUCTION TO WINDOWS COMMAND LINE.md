@@ -16,7 +16,7 @@ The built-in command shell CMD.exe and PowerShell are two implementations includ
 | Can be run on Linux systems                                                | Can only be run on Windows systems                    |
 ## CMD
 
-### COMMAND PROMPT BASICS
+### Command Prompt Basics
 
 It allows users to input commands that are directly interpreted and then executed by the operating system.
 
@@ -24,7 +24,7 @@ Remote access protocols: SSH, PsExec, WinRM, RDP.
 
 Comandes explicades: dir
 
-### GETTING HELP
+### Getting Help
 
 
 The Command Prompt has a built-in `help` function that can provide us with detailed information about the available commands on our system and how to utilize those functions.
@@ -37,7 +37,7 @@ Comandes explicades: cls, doskey
 
 `doskey history` --> Mostra l'historial de comandes
 
-### SYSTEM NAVIGATION
+### System Investigation
 
 Absoulte vs Relative PATH
 
