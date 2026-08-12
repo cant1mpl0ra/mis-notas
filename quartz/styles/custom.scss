@@ -15,3 +15,13 @@
   white-space: nowrap;
   text-indent: -9999px;
 }
+
+/* 1. Expandir el contenedor general para empujar las barras laterales a los bordes */
+.page {
+  max-width: 95vw !important; /* Usa 95% del ancho de tu pantalla. Pon 100vw si lo quieres pegado del todo */
+}
+
+/* 2. Expandir el contenedor central donde están tus notas y esquemas */
+.center {
+  max-width: 1200px !important; /* Por defecto ronda los 750px. Cámbialo al tamaño que más te guste */
+}
