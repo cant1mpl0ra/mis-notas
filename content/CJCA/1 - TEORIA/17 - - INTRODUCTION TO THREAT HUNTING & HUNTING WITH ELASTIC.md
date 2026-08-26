@@ -2,7 +2,7 @@
 
 ### A.1 Threat Hunting Fundamentals
 
--> Per tal de detectar les intrusions abans, es pren la decisió de realitzar una búsqueda activa per part de l’equip de seguretat.
+-> Per tal de detectar les intrusions abans, es pren la decisió de realitzar una búsqueda activa per part de l’equip de seguretat. Prova Produccio
 
 -> El procés comença amb la identificació dels assets que puguin ser objectius valuosos. Seguidament, analitzem els TTPs en funció dels assets trobats. Finalment, reforcem la seguretat per a fer front a aquests TTPs determinats.
 
